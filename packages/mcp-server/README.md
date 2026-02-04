@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 Because it's not published yet, clone the repo and build it:
 
 ```sh
-git clone git@github.com:stainless-sdks/strezless-musick-nexus-metadata-typescript.git
-cd strezless-musick-nexus-metadata-typescript
+git clone git@github.com:omar-orrantia/GDL_code.git
+cd GDL_code
 ./scripts/bootstrap
 ./scripts/build
 ```
@@ -40,7 +40,7 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "strezless_musick_nexus_metadata_api": {
       "command": "node",
-      "args": ["/path/to/local/strezless-musick-nexus-metadata-typescript/packages/mcp-server"],
+      "args": ["/path/to/local/GDL_code/packages/mcp-server"],
       "env": {
         "STREZLESS_MUSICK_NEXUS_METADATA_API_KEY": "My API Key"
       }
