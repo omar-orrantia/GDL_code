@@ -500,7 +500,7 @@ export class StrezlessMusickNexusMetadata {
     controller: AbortController,
   ): Promise<Response> {
     const { signal, method, ...options } = init || {};
-    const abort = controller.abort.bind(controller);
+    const abort = this._makeAbort(controller);
     if (signal) signal.addEventListener('abort', abort, { once: true });
 
     const timeout = setTimeout(abort, ms);
@@ -526,6 +526,7 @@ export class StrezlessMusickNexusMetadata {
       return await this.fetch.call(undefined, url, fetchOptions);
     } finally {
       clearTimeout(timeout);
+      if (signal) signal.removeEventListener('abort', abort);
     }
   }
 
@@ -668,6 +669,12 @@ export class StrezlessMusickNexusMetadata {
     this.validateHeaders(headers);
 
     return headers.values;
+  }
+
+  private _makeAbort(controller: AbortController) {
+    // note: we can't just inline this method inside `fetchWithTimeout()` because then the closure
+    //       would capture all request options, and cause a memory leak.
+    return () => controller.abort();
   }
 
   private buildBody({ options: { body, headers: rawHeaders } }: { options: FinalRequestOptions }): {
