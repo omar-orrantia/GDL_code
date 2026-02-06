@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/omar-orrantia/GDL_code/tree/main/packages/mcp-server#readme",
   "license": "Apache-2.0",
-  "packageManager": "pnpm@10.24.0",
+  "packageManager": "pnpm@10.27.0",
   "private": false,
   "publishConfig": {
     "access": "public"
