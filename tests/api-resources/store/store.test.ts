@@ -8,7 +8,7 @@ const client = new StrezlessMusickNexusMetadata({
 });
 
 describe('resource store', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listInventory', async () => {
     const responsePromise = client.store.listInventory();
     const rawResponse = await responsePromise.asResponse();
