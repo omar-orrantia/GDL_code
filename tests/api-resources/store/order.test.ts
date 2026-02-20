@@ -8,7 +8,7 @@ const client = new StrezlessMusickNexusMetadata({
 });
 
 describe('resource order', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.store.order.create();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource order', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -38,7 +38,7 @@ describe('resource order', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.store.order.retrieve(0);
     const rawResponse = await responsePromise.asResponse();
@@ -50,7 +50,7 @@ describe('resource order', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.store.order.delete(0);
     const rawResponse = await responsePromise.asResponse();

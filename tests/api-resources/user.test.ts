@@ -8,7 +8,7 @@ const client = new StrezlessMusickNexusMetadata({
 });
 
 describe('resource user', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.user.create();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -40,7 +40,7 @@ describe('resource user', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.user.retrieve('username');
     const rawResponse = await responsePromise.asResponse();
@@ -52,7 +52,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.user.update('username');
     const rawResponse = await responsePromise.asResponse();
@@ -64,7 +64,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -85,7 +85,7 @@ describe('resource user', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.user.delete('username');
     const rawResponse = await responsePromise.asResponse();
@@ -97,7 +97,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createWithList', async () => {
     const responsePromise = client.user.createWithList();
     const rawResponse = await responsePromise.asResponse();
@@ -109,7 +109,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createWithList: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -133,7 +133,7 @@ describe('resource user', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('login', async () => {
     const responsePromise = client.user.login();
     const rawResponse = await responsePromise.asResponse();
@@ -145,7 +145,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('login: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -153,7 +153,7 @@ describe('resource user', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('logout', async () => {
     const responsePromise = client.user.logout();
     const rawResponse = await responsePromise.asResponse();

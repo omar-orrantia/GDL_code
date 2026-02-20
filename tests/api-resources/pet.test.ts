@@ -8,7 +8,7 @@ const client = new StrezlessMusickNexusMetadata({
 });
 
 describe('resource pet', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.pet.create({ name: 'doggie', photoUrls: ['string'] });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource pet', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.pet.create({
       name: 'doggie',
@@ -32,7 +32,7 @@ describe('resource pet', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.pet.retrieve(0);
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource pet', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.pet.update({ name: 'doggie', photoUrls: ['string'] });
     const rawResponse = await responsePromise.asResponse();
@@ -56,7 +56,7 @@ describe('resource pet', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.pet.update({
       name: 'doggie',
@@ -68,7 +68,7 @@ describe('resource pet', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.pet.delete(0);
     const rawResponse = await responsePromise.asResponse();
@@ -80,7 +80,7 @@ describe('resource pet', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('findByStatus', async () => {
     const responsePromise = client.pet.findByStatus();
     const rawResponse = await responsePromise.asResponse();
@@ -92,7 +92,7 @@ describe('resource pet', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('findByStatus: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -100,7 +100,7 @@ describe('resource pet', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('findByTags', async () => {
     const responsePromise = client.pet.findByTags();
     const rawResponse = await responsePromise.asResponse();
@@ -112,7 +112,7 @@ describe('resource pet', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('findByTags: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -120,7 +120,7 @@ describe('resource pet', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateWithForm', async () => {
     const responsePromise = client.pet.updateWithForm(0);
     const rawResponse = await responsePromise.asResponse();
@@ -132,7 +132,7 @@ describe('resource pet', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateWithForm: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -140,7 +140,7 @@ describe('resource pet', () => {
     ).rejects.toThrow(StrezlessMusickNexusMetadata.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('uploadImage', async () => {
     const responsePromise = client.pet.uploadImage(
       0,
