@@ -60,7 +60,7 @@ $ yarn link strezless-musick-nexus-metadata
 # With pnpm
 $ pnpm link --global
 $ cd ../my-package
-$ pnpm link -—global strezless-musick-nexus-metadata
+$ pnpm link --global strezless-musick-nexus-metadata
 ```
 
 ## Running tests
