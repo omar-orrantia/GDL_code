@@ -6,6 +6,9 @@ import { Order, OrderCreateParams, OrderResource } from './order';
 import { APIPromise } from '../../core/api-promise';
 import { RequestOptions } from '../../internal/request-options';
 
+/**
+ * Access to Petstore orders
+ */
 export class Store extends APIResource {
   order: OrderAPI.OrderResource = new OrderAPI.OrderResource(this._client);
 
