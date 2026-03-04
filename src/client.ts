@@ -740,8 +740,17 @@ export class StrezlessMusickNexusMetadata {
 
   static toFile = Uploads.toFile;
 
+  /**
+   * Everything about your Pets
+   */
   pet: API.PetResource = new API.PetResource(this);
+  /**
+   * Access to Petstore orders
+   */
   store: API.Store = new API.Store(this);
+  /**
+   * Operations about user
+   */
   user: API.UserResource = new API.UserResource(this);
 }
 
