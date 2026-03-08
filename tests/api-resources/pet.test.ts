@@ -144,7 +144,7 @@ describe('resource pet', () => {
   test.skip('uploadImage', async () => {
     const responsePromise = client.pet.uploadImage(
       0,
-      await toFile(Buffer.from('# my file contents'), 'README.md'),
+      await toFile(Buffer.from('Example data'), 'README.md'),
       {},
     );
     const rawResponse = await responsePromise.asResponse();
