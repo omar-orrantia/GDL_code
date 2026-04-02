@@ -76,6 +76,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata pet update \\\n  --api-key 'My API Key' \\\n  --name doggie \\\n  --photo-url string",
       },
+      csharp: {
+        method: 'Pet.Update',
+        example:
+          'PetUpdateParams parameters = new()\n{\n    Name = "doggie",\n    PhotoUrls =\n    [\n        "string"\n    ],\n};\n\nvar pet = await client.Pet.Update(parameters);\n\nConsole.WriteLine(pet);',
+      },
       go: {
         method: 'client.Pet.Update',
         example:
@@ -94,6 +99,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().update',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val params: Pet = Pet.builder()\n        .name("doggie")\n        .addPhotoUrl("string")\n        .build()\n    val pet: Pet = client.pet().update(params)\n}',
+      },
+      php: {
+        method: 'pet->update',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$pet = $client->pet->update(\n  name: 'doggie',\n  photoURLs: ['string'],\n  id: 10,\n  category: ['id' => 1, 'name' => 'Dogs'],\n  status: 'available',\n  tags: [['id' => 0, 'name' => 'name']],\n);\n\nvar_dump($pet);",
       },
       python: {
         method: 'pet.update',
@@ -138,6 +148,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata pet create \\\n  --api-key 'My API Key' \\\n  --name doggie \\\n  --photo-url string",
       },
+      csharp: {
+        method: 'Pet.Create',
+        example:
+          'PetCreateParams parameters = new()\n{\n    Name = "doggie",\n    PhotoUrls =\n    [\n        "string"\n    ],\n};\n\nvar pet = await client.Pet.Create(parameters);\n\nConsole.WriteLine(pet);',
+      },
       go: {
         method: 'client.Pet.New',
         example:
@@ -156,6 +171,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().create',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetCreateParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val params: Pet = Pet.builder()\n        .name("doggie")\n        .addPhotoUrl("string")\n        .build()\n    val pet: Pet = client.pet().create(params)\n}',
+      },
+      php: {
+        method: 'pet->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$pet = $client->pet->create(\n  name: 'doggie',\n  photoURLs: ['string'],\n  id: 10,\n  category: ['id' => 1, 'name' => 'Dogs'],\n  status: 'available',\n  tags: [['id' => 0, 'name' => 'name']],\n);\n\nvar_dump($pet);",
       },
       python: {
         method: 'pet.create',
@@ -192,6 +212,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet find_by_status',
         example: "strezless-musick-nexus-metadata pet find-by-status \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Pet.FindByStatus',
+        example:
+          'PetFindByStatusParams parameters = new();\n\nvar pets = await client.Pet.FindByStatus(parameters);\n\nConsole.WriteLine(pets);',
+      },
       go: {
         method: 'client.Pet.FindByStatus',
         example:
@@ -210,6 +235,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().findByStatus',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetFindByStatusParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val pets: List<Pet> = client.pet().findByStatus()\n}',
+      },
+      php: {
+        method: 'pet->findByStatus',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$pets = $client->pet->findByStatus(status: 'available');\n\nvar_dump($pets);",
       },
       python: {
         method: 'pet.find_by_status',
@@ -247,6 +277,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet find_by_tags',
         example: "strezless-musick-nexus-metadata pet find-by-tags \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Pet.FindByTags',
+        example:
+          'PetFindByTagsParams parameters = new();\n\nvar pets = await client.Pet.FindByTags(parameters);\n\nConsole.WriteLine(pets);',
+      },
       go: {
         method: 'client.Pet.FindByTags',
         example:
@@ -265,6 +300,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().findByTags',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetFindByTagsParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val pets: List<Pet> = client.pet().findByTags()\n}',
+      },
+      php: {
+        method: 'pet->findByTags',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$pets = $client->pet->findByTags(tags: ['string']);\n\nvar_dump($pets);",
       },
       python: {
         method: 'pet.find_by_tags',
@@ -301,6 +341,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet retrieve',
         example: "strezless-musick-nexus-metadata pet retrieve \\\n  --api-key 'My API Key' \\\n  --pet-id 0",
       },
+      csharp: {
+        method: 'Pet.Retrieve',
+        example:
+          'PetRetrieveParams parameters = new() { PetID = 0 };\n\nvar pet = await client.Pet.Retrieve(parameters);\n\nConsole.WriteLine(pet);',
+      },
       go: {
         method: 'client.Pet.Get',
         example:
@@ -319,6 +364,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().retrieve',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetRetrieveParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val pet: Pet = client.pet().retrieve(0L)\n}',
+      },
+      php: {
+        method: 'pet->retrieve',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$pet = $client->pet->retrieve(0);\n\nvar_dump($pet);",
       },
       python: {
         method: 'pet.retrieve',
@@ -354,6 +404,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata pet update-with-form \\\n  --api-key 'My API Key' \\\n  --pet-id 0",
       },
+      csharp: {
+        method: 'Pet.UpdateWithForm',
+        example:
+          'PetUpdateWithFormParams parameters = new() { PetID = 0 };\n\nawait client.Pet.UpdateWithForm(parameters);',
+      },
       go: {
         method: 'client.Pet.UpdateWithForm',
         example:
@@ -372,6 +427,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().updateWithForm',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateWithFormParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    client.pet().updateWithForm(0L)\n}',
+      },
+      php: {
+        method: 'pet->updateWithForm',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->pet->updateWithForm(0, name: 'name', status: 'status');\n\nvar_dump($result);",
       },
       python: {
         method: 'pet.update_with_form',
@@ -406,6 +466,10 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet delete',
         example: "strezless-musick-nexus-metadata pet delete \\\n  --api-key 'My API Key' \\\n  --pet-id 0",
       },
+      csharp: {
+        method: 'Pet.Delete',
+        example: 'PetDeleteParams parameters = new() { PetID = 0 };\n\nawait client.Pet.Delete(parameters);',
+      },
       go: {
         method: 'client.Pet.Delete',
         example:
@@ -424,6 +488,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().delete',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetDeleteParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    client.pet().delete(0L)\n}',
+      },
+      php: {
+        method: 'pet->delete',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->pet->delete(0);\n\nvar_dump($result);",
       },
       python: {
         method: 'pet.delete',
@@ -460,6 +529,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata pet upload-image \\\n  --api-key 'My API Key' \\\n  --pet-id 0 \\\n  --body 'Example data'",
       },
+      csharp: {
+        method: 'Pet.UploadImage',
+        example:
+          'PetUploadImageParams parameters = new()\n{\n    PetID = 0,\n    Body = Encoding.UTF8.GetBytes("Example data"),\n};\n\nvar response = await client.Pet.UploadImage(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Pet.UploadImage',
         example:
@@ -478,6 +552,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'pet().uploadImage',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUploadImageParams\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUploadImageResponse\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val response: PetUploadImageResponse = client.pet().uploadImage(\n      0L, "Example data"\n    )\n}',
+      },
+      php: {
+        method: 'pet->uploadImage',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$response = $client->pet->uploadImage(0, 'file');\n\nvar_dump($response);",
       },
       python: {
         method: 'pet.upload_image',
@@ -512,6 +591,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'store list_inventory',
         example: "strezless-musick-nexus-metadata store list-inventory \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Store.ListInventory',
+        example:
+          'StoreListInventoryParams parameters = new();\n\nvar response = await client.Store.ListInventory(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.Store.ListInventory',
         example:
@@ -530,6 +614,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'store().listInventory',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.store.StoreListInventoryParams\nimport com.strezless_musick_nexus_metadata.api.models.store.StoreListInventoryResponse\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val response: StoreListInventoryResponse = client.store().listInventory()\n}',
+      },
+      php: {
+        method: 'store->listInventory',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$response = $client->store->listInventory();\n\nvar_dump($response);",
       },
       python: {
         method: 'store.list_inventory',
@@ -573,6 +662,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'order create',
         example: "strezless-musick-nexus-metadata store:order create \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'Store.Order.Create',
+        example:
+          'OrderCreateParams parameters = new();\n\nvar order = await client.Store.Order.Create(parameters);\n\nConsole.WriteLine(order);',
+      },
       go: {
         method: 'client.Store.Order.New',
         example:
@@ -591,6 +685,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'store().order().create',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.store.order.Order\nimport com.strezless_musick_nexus_metadata.api.models.store.order.OrderCreateParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val order: Order = client.store().order().create()\n}',
+      },
+      php: {
+        method: 'store->order->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$order = $client->store->order->create(\n  id: 10,\n  complete: true,\n  petID: 198772,\n  quantity: 7,\n  shipDate: new \\DateTimeImmutable('2019-12-27T18:11:19.117Z'),\n  status: 'approved',\n);\n\nvar_dump($order);",
       },
       python: {
         method: 'store.order.create',
@@ -629,6 +728,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata store:order retrieve \\\n  --api-key 'My API Key' \\\n  --order-id 0",
       },
+      csharp: {
+        method: 'Store.Order.Retrieve',
+        example:
+          'OrderRetrieveParams parameters = new() { OrderID = 0 };\n\nvar order = await client.Store.Order.Retrieve(parameters);\n\nConsole.WriteLine(order);',
+      },
       go: {
         method: 'client.Store.Order.Get',
         example:
@@ -647,6 +751,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'store().order().retrieve',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.store.order.Order\nimport com.strezless_musick_nexus_metadata.api.models.store.order.OrderRetrieveParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val order: Order = client.store().order().retrieve(0L)\n}',
+      },
+      php: {
+        method: 'store->order->retrieve',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$order = $client->store->order->retrieve(0);\n\nvar_dump($order);",
       },
       python: {
         method: 'store.order.retrieve',
@@ -683,6 +792,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata store:order delete \\\n  --api-key 'My API Key' \\\n  --order-id 0",
       },
+      csharp: {
+        method: 'Store.Order.Delete',
+        example:
+          'OrderDeleteParams parameters = new() { OrderID = 0 };\n\nawait client.Store.Order.Delete(parameters);',
+      },
       go: {
         method: 'client.Store.Order.Delete',
         example:
@@ -701,6 +815,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'store().order().delete',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.store.order.OrderDeleteParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    client.store().order().delete(0L)\n}',
+      },
+      php: {
+        method: 'store->order->delete',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->store->order->delete(0);\n\nvar_dump($result);",
       },
       python: {
         method: 'store.order.delete',
@@ -746,6 +865,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user create',
         example: "strezless-musick-nexus-metadata user create \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'User.Create',
+        example:
+          'UserCreateParams parameters = new();\n\nvar user = await client.User.Create(parameters);\n\nConsole.WriteLine(user);',
+      },
       go: {
         method: 'client.User.New',
         example:
@@ -764,6 +888,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user().create',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.user.User\nimport com.strezless_musick_nexus_metadata.api.models.user.UserCreateParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val user: User = client.user().create()\n}',
+      },
+      php: {
+        method: 'user->create',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$user = $client->user->create(\n  id: 10,\n  email: 'john@email.com',\n  firstName: 'John',\n  lastName: 'James',\n  password: '12345',\n  phone: '12345',\n  username: 'theUser',\n  userStatus: 1,\n);\n\nvar_dump($user);",
       },
       python: {
         method: 'user.create',
@@ -802,6 +931,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user create_with_list',
         example: "strezless-musick-nexus-metadata user create-with-list \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'User.CreateWithList',
+        example:
+          'UserCreateWithListParams parameters = new();\n\nvar user = await client.User.CreateWithList(parameters);\n\nConsole.WriteLine(user);',
+      },
       go: {
         method: 'client.User.NewWithList',
         example:
@@ -820,6 +954,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user().createWithList',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.user.User\nimport com.strezless_musick_nexus_metadata.api.models.user.UserCreateWithListParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val user: User = client.user().createWithList()\n}',
+      },
+      php: {
+        method: 'user->createWithList',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$user = $client->user->createWithList(\n  body: [\n    [\n      'id' => 10,\n      'email' => 'john@email.com',\n      'firstName' => 'John',\n      'lastName' => 'James',\n      'password' => '12345',\n      'phone' => '12345',\n      'username' => 'theUser',\n      'userStatus' => 1,\n    ],\n  ],\n);\n\nvar_dump($user);",
       },
       python: {
         method: 'user.create_with_list',
@@ -855,6 +994,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user login',
         example: "strezless-musick-nexus-metadata user login \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'User.Login',
+        example:
+          'UserLoginParams parameters = new();\n\nvar response = await client.User.Login(parameters);\n\nConsole.WriteLine(response);',
+      },
       go: {
         method: 'client.User.Login',
         example:
@@ -873,6 +1017,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user().login',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.user.UserLoginParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val response: String = client.user().login()\n}',
+      },
+      php: {
+        method: 'user->login',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$response = $client->user->login(password: 'password', username: 'username');\n\nvar_dump($response);",
       },
       python: {
         method: 'user.login',
@@ -906,6 +1055,10 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user logout',
         example: "strezless-musick-nexus-metadata user logout \\\n  --api-key 'My API Key'",
       },
+      csharp: {
+        method: 'User.Logout',
+        example: 'UserLogoutParams parameters = new();\n\nawait client.User.Logout(parameters);',
+      },
       go: {
         method: 'client.User.Logout',
         example:
@@ -924,6 +1077,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user().logout',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.user.UserLogoutParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    client.user().logout()\n}',
+      },
+      php: {
+        method: 'user->logout',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->user->logout();\n\nvar_dump($result);",
       },
       python: {
         method: 'user.logout',
@@ -961,6 +1119,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata user retrieve \\\n  --api-key 'My API Key' \\\n  --username username",
       },
+      csharp: {
+        method: 'User.Retrieve',
+        example:
+          'UserRetrieveParams parameters = new() { Username = "username" };\n\nvar user = await client.User.Retrieve(parameters);\n\nConsole.WriteLine(user);',
+      },
       go: {
         method: 'client.User.Get',
         example:
@@ -979,6 +1142,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user().retrieve',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.user.User\nimport com.strezless_musick_nexus_metadata.api.models.user.UserRetrieveParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    val user: User = client.user().retrieve("username")\n}',
+      },
+      php: {
+        method: 'user->retrieve',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$user = $client->user->retrieve('username');\n\nvar_dump($user);",
       },
       python: {
         method: 'user.retrieve',
@@ -1024,6 +1192,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata user update \\\n  --api-key 'My API Key' \\\n  --existing-username username",
       },
+      csharp: {
+        method: 'User.Update',
+        example:
+          'UserUpdateParams parameters = new() { ExistingUsername = "username" };\n\nawait client.User.Update(parameters);',
+      },
       go: {
         method: 'client.User.Update',
         example:
@@ -1042,6 +1215,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user().update',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.user.UserUpdateParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    client.user().update("username")\n}',
+      },
+      php: {
+        method: 'user->update',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->user->update(\n  'username',\n  id: 10,\n  email: 'john@email.com',\n  firstName: 'John',\n  lastName: 'James',\n  password: '12345',\n  phone: '12345',\n  username: 'theUser',\n  userStatus: 1,\n);\n\nvar_dump($result);",
       },
       python: {
         method: 'user.update',
@@ -1077,6 +1255,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         example:
           "strezless-musick-nexus-metadata user delete \\\n  --api-key 'My API Key' \\\n  --username username",
       },
+      csharp: {
+        method: 'User.Delete',
+        example:
+          'UserDeleteParams parameters = new() { Username = "username" };\n\nawait client.User.Delete(parameters);',
+      },
       go: {
         method: 'client.User.Delete',
         example:
@@ -1095,6 +1278,11 @@ const EMBEDDED_METHODS: MethodEntry[] = [
         method: 'user().delete',
         example:
           'package com.strezless_musick_nexus_metadata.api.example\n\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.user.UserDeleteParams\n\nfun main() {\n    val client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\n    client.user().delete("username")\n}',
+      },
+      php: {
+        method: 'user->delete',
+        example:
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$result = $client->user->delete('username');\n\nvar_dump($result);",
       },
       python: {
         method: 'user.delete',
@@ -1147,9 +1335,19 @@ const EMBEDDED_READMES: { language: string; content: string }[] = [
       '# Strezless Musick Nexus Metadata Kotlin API Library\n\n<!-- x-release-please-start-version -->\n[![Maven Central](https://img.shields.io/maven-central/v/com.strezless_musick_nexus_metadata.api/strezless-musick-nexus-metadata-kotlin)](https://central.sonatype.com/artifact/com.strezless_musick_nexus_metadata.api/strezless-musick-nexus-metadata-kotlin/0.0.1)\n[![javadoc](https://javadoc.io/badge2/com.strezless_musick_nexus_metadata.api/strezless-musick-nexus-metadata-kotlin/0.0.1/javadoc.svg)](https://javadoc.io/doc/com.strezless_musick_nexus_metadata.api/strezless-musick-nexus-metadata-kotlin/0.0.1)\n<!-- x-release-please-end -->\n\nThe Strezless Musick Nexus Metadata Kotlin SDK provides convenient access to the Strezless Musick Nexus Metadata REST API   from applications written in Kotlin.\n\n\n\nIt is generated with [Stainless](https://www.stainless.com/).\n\n## MCP Server\n\nUse the Strezless Musick Nexus Metadata MCP Server to enable AI assistants to interact with this API, allowing them to explore endpoints, make test requests, and use documentation to help integrate this SDK into your application.\n\n[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=strezless-musick-nexus-metadata-mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsInN0cmV6bGVzcy1tdXNpY2stbmV4dXMtbWV0YWRhdGEtbWNwIl0sImVudiI6eyJTVFJFWkxFU1NfTVVTSUNLX05FWFVTX01FVEFEQVRBX0FQSV9LRVkiOiJNeSBBUEkgS2V5In19)\n[![Install in VS Code](https://img.shields.io/badge/_-Add_to_VS_Code-blue?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCA0MCA0MCI+PHBhdGggZmlsbD0iI0VFRSIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNMzAuMjM1IDM5Ljg4NGEyLjQ5MSAyLjQ5MSAwIDAgMS0xLjc4MS0uNzNMMTIuNyAyNC43OGwtMy40NiAyLjYyNC0zLjQwNiAyLjU4MmExLjY2NSAxLjY2NSAwIDAgMS0xLjA4Mi4zMzggMS42NjQgMS42NjQgMCAwIDEtMS4wNDYtLjQzMWwtMi4yLTJhMS42NjYgMS42NjYgMCAwIDEgMC0yLjQ2M0w3LjQ1OCAyMCA0LjY3IDE3LjQ1MyAxLjUwNyAxNC41N2ExLjY2NSAxLjY2NSAwIDAgMSAwLTIuNDYzbDIuMi0yYTEuNjY1IDEuNjY1IDAgMCAxIDIuMTMtLjA5N2w2Ljg2MyA1LjIwOUwyOC40NTIuODQ0YTIuNDg4IDIuNDg4IDAgMCAxIDEuODQxLS43MjljLjM1MS4wMDkuNjk5LjA5MSAxLjAxOS4yNDVsOC4yMzYgMy45NjFhMi41IDIuNSAwIDAgMSAxLjQxNSAyLjI1M3YuMDk5LS4wNDVWMzMuMzd2LS4wNDUuMDk1YTIuNTAxIDIuNTAxIDAgMCAxLTEuNDE2IDIuMjU3bC04LjIzNSAzLjk2MWEyLjQ5MiAyLjQ5MiAwIDAgMS0xLjA3Ny4yNDZabS43MTYtMjguOTQ3LTExLjk0OCA5LjA2MiAxMS45NTIgOS4wNjUtLjAwNC0xOC4xMjdaIi8+PC9zdmc+)](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22strezless-musick-nexus-metadata-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22strezless-musick-nexus-metadata-mcp%22%5D%2C%22env%22%3A%7B%22STREZLESS_MUSICK_NEXUS_METADATA_API_KEY%22%3A%22My%20API%20Key%22%7D%7D)\n\n> Note: You may need to set environment variables in your MCP client.\n\n<!-- x-release-please-start-version -->\n\nKDocs are available on [javadoc.io](https://javadoc.io/doc/com.strezless_musick_nexus_metadata.api/strezless-musick-nexus-metadata-kotlin/0.0.1).\n\n<!-- x-release-please-end -->\n\n## Installation\n\n<!-- x-release-please-start-version -->\n\n### Gradle\n\n~~~kotlin\nimplementation("com.strezless_musick_nexus_metadata.api:strezless-musick-nexus-metadata-kotlin:0.0.1")\n~~~\n\n### Maven\n\n~~~xml\n<dependency>\n  <groupId>com.strezless_musick_nexus_metadata.api</groupId>\n  <artifactId>strezless-musick-nexus-metadata-kotlin</artifactId>\n  <version>0.0.1</version>\n</dependency>\n~~~\n\n<!-- x-release-please-end -->\n\n## Requirements\n\nThis library requires Java 8 or later.\n\n## Usage\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\n// Configures using the `strezlessmusicknexusmetadata.apiKey` and `strezlessmusicknexusmetadata.baseUrl` system properties\n// Or configures using the `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY` and `STREZLESS_MUSICK_NEXUS_METADATA_BASE_URL` environment variables\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\nval params: Pet = Pet.builder()\n    .name("doggie")\n    .addPhotoUrl("string")\n    .build()\nval pet: Pet = client.pet().update(params)\n```\n\n## Client configuration\n\nConfigure the client using system properties or environment variables:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\n\n// Configures using the `strezlessmusicknexusmetadata.apiKey` and `strezlessmusicknexusmetadata.baseUrl` system properties\n// Or configures using the `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY` and `STREZLESS_MUSICK_NEXUS_METADATA_BASE_URL` environment variables\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n```\n\nOr manually:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    .apiKey("My API Key")\n    .build()\n```\n\nOr using a combination of the two approaches:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    // Configures using the `strezlessmusicknexusmetadata.apiKey` and `strezlessmusicknexusmetadata.baseUrl` system properties\n    // Or configures using the `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY` and `STREZLESS_MUSICK_NEXUS_METADATA_BASE_URL` environment variables\n    .fromEnv()\n    .apiKey("My API Key")\n    .build()\n```\n\nSee this table for the available options:\n\n| Setter    | System property                        | Environment variable                       | Required | Default value                           |\n| --------- | -------------------------------------- | ------------------------------------------ | -------- | --------------------------------------- |\n| `apiKey`  | `strezlessmusicknexusmetadata.apiKey`  | `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY`  | true     | -                                       |\n| `baseUrl` | `strezlessmusicknexusmetadata.baseUrl` | `STREZLESS_MUSICK_NEXUS_METADATA_BASE_URL` | true     | `"https://petstore3.swagger.io/api/v3"` |\n\nSystem properties take precedence over environment variables.\n\n> [!TIP]\n> Don\'t create more than one client in the same application. Each client has a connection pool and\n> thread pools, which are more efficient to share between requests.\n\n### Modifying configuration\n\nTo temporarily use a modified client configuration, while reusing the same connection and thread       pools, call `withOptions()` on any client or service:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\n\nval clientWithOptions: StrezlessMusickNexusMetadataClient = client.withOptions {\n    it.baseUrl("https://example.com")\n    it.maxRetries(42)\n}\n```\n\nThe `withOptions()` method does not affect the original client or service.\n\n## Requests and responses\n\nTo send a request to the Strezless Musick Nexus Metadata API, build an instance of some `Params` class and pass it to the     corresponding client method. When the response is received, it will be deserialized into an instance of     a Kotlin class.\n\nFor example, `client.pet().update(...)` should be called with an instance of `PetUpdateParams`, and it     will return an instance of `Pet`.\n\n## Immutability\n\nEach class in the SDK has an associated   [builder](https://blogs.oracle.com/javamagazine/post/exploring-joshua-blochs-builder-design-pattern-in-java)   or factory method for constructing it.\n\nEach class is [immutable](https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html)   once constructed. If the class has an associated builder, then it has a `toBuilder()` method, which can   be used to convert it back to a builder for making a modified copy.\n\nBecause each class is immutable, builder modification will _never_ affect already built class instances.\n\n## Asynchronous execution\n\nThe default client is synchronous. To switch to asynchronous execution, call the `async()` method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\n// Configures using the `strezlessmusicknexusmetadata.apiKey` and `strezlessmusicknexusmetadata.baseUrl` system properties\n// Or configures using the `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY` and `STREZLESS_MUSICK_NEXUS_METADATA_BASE_URL` environment variables\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.fromEnv()\n\nval params: Pet = Pet.builder()\n    .name("doggie")\n    .addPhotoUrl("string")\n    .build()\nval pet: Pet = client.async().pet().update(params)\n```\n\nOr create an asynchronous client from the beginning:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClientAsync\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClientAsync\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\n// Configures using the `strezlessmusicknexusmetadata.apiKey` and `strezlessmusicknexusmetadata.baseUrl` system properties\n// Or configures using the `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY` and `STREZLESS_MUSICK_NEXUS_METADATA_BASE_URL` environment variables\nval client: StrezlessMusickNexusMetadataClientAsync = StrezlessMusickNexusMetadataOkHttpClientAsync.fromEnv()\n\nval params: Pet = Pet.builder()\n    .name("doggie")\n    .addPhotoUrl("string")\n    .build()\nval pet: Pet = client.pet().update(params)\n```\n\nThe asynchronous client supports the same options as the synchronous one, except most methods are [suspending](https://kotlinlang.org/docs/coroutines-guide.html).\n\n\n\n\n\n\n\n## Raw responses\n\nThe SDK defines methods that deserialize responses into instances of Kotlin classes.       However, these methods don\'t provide access to the response headers, status code, or the raw response       body.\n\nTo access this data, prefix any HTTP method call on a client or service with `withRawResponse()`:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.core.http.Headers\nimport com.strezless_musick_nexus_metadata.api.core.http.HttpResponseFor\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\nval params: Pet = Pet.builder()\n    .name("doggie")\n    .addPhotoUrl("string")\n    .build()\nval pet: HttpResponseFor<Pet> = client.pet().withRawResponse().update(params)\n\nval statusCode: Int = pet.statusCode()\nval headers: Headers = pet.headers()\n```\n\nYou can still deserialize the response into an instance of a Kotlin class if needed:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\n\nval parsedPet: Pet = pet.parse()\n```\n\n## Error handling\n\nThe SDK throws custom unchecked exception types:\n\n- [`StrezlessMusickNexusMetadataServiceException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/StrezlessMusickNexusMetadataServiceException.kt): Base class for HTTP errors. See this table for which exception       subclass is thrown for each HTTP status code:\n\n  | Status | Exception                                          |\n  | ------ | -------------------------------------------------- |\n  | 400    | [`BadRequestException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/BadRequestException.kt)           |\n  | 401    | [`UnauthorizedException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/UnauthorizedException.kt)         |\n  | 403    | [`PermissionDeniedException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/PermissionDeniedException.kt)     |\n  | 404    | [`NotFoundException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/NotFoundException.kt)             |\n  | 422    | [`UnprocessableEntityException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/UnprocessableEntityException.kt)  |\n  | 429    | [`RateLimitException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/RateLimitException.kt)            |\n  | 5xx    | [`InternalServerException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/InternalServerException.kt)       |\n  | others | [`UnexpectedStatusCodeException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/UnexpectedStatusCodeException.kt) |\n\n- [`StrezlessMusickNexusMetadataIoException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/StrezlessMusickNexusMetadataIoException.kt): I/O networking errors.\n\n- [`StrezlessMusickNexusMetadataRetryableException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/StrezlessMusickNexusMetadataRetryableException.kt): Generic error indicating a failure that could be retried by the client.\n\n- [`StrezlessMusickNexusMetadataInvalidDataException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/StrezlessMusickNexusMetadataInvalidDataException.kt): Failure to interpret successfully parsed data. For example,       when accessing a property that\'s supposed to be required, but the API unexpectedly omitted it from the       response.\n\n- [`StrezlessMusickNexusMetadataException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/StrezlessMusickNexusMetadataException.kt): Base class for all exceptions. Most errors will result in one of the       previously mentioned ones, but completely generic errors may be thrown using the base class.\n\n\n\n## Logging\n\nThe SDK uses the standard   [OkHttp logging interceptor](https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor).\n\nEnable logging by setting the `STREZLESS_MUSICK_NEXUS_METADATA_LOG` environment variable to   `info`:\n\n```sh\nexport STREZLESS_MUSICK_NEXUS_METADATA_LOG=info\n```\n\nOr to `debug` for more verbose logging:\n\n```sh\nexport STREZLESS_MUSICK_NEXUS_METADATA_LOG=debug\n```\n\n## ProGuard and R8\n\nAlthough the SDK uses reflection, it is still usable with     [ProGuard](https://github.com/Guardsquare/proguard) and     [R8](https://developer.android.com/topic/performance/app-optimization/enable-app-optimization) because     `strezless-musick-nexus-metadata-kotlin-core` is published with a     [configuration file](strezless-musick-nexus-metadata-kotlin-core/src/main/resources/META-INF/proguard/strezless-musick-nexus-metadata-kotlin-core.pro) containing     [keep rules](https://www.guardsquare.com/manual/configuration/usage).\n\nProGuard and R8 should automatically detect and use the published rules, but you can also manually copy     the keep rules if necessary.\n\n\n\n\n\n## Jackson\n\nThe SDK depends on [Jackson](https://github.com/FasterXML/jackson) for JSON     serialization/deserialization. It is compatible with version 2.13.4 or higher,     but depends on version 2.18.2 by default.\n\nThe SDK throws an exception if it detects an incompatible Jackson version at runtime (e.g. if the     default version was overridden in your Maven or Gradle config).\n\nIf the SDK threw an exception, but you\'re _certain_ the version is compatible, then disable the version     check using the `checkJacksonVersionCompatibility` on [`StrezlessMusickNexusMetadataOkHttpClient`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClient.kt) or     [`StrezlessMusickNexusMetadataOkHttpClientAsync`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClientAsync.kt).\n\n> [!CAUTION]\n> We make no guarantee that the SDK works correctly when the Jackson version check is disabled.\n\nAlso note that there are bugs in older Jackson versions that can affect the SDK. We don\'t work around all     Jackson bugs ([example](https://github.com/FasterXML/jackson-databind/issues/3240)) and expect users to     upgrade Jackson for those instead.\n\n## Network options\n\n### Retries\n\nThe SDK automatically retries 2 times by default, with a short exponential backoff between requests.\n\nOnly the following error types are retried:\n- Connection errors (for example, due to a network connectivity problem)\n- 408 Request Timeout\n- 409 Conflict\n- 429 Rate Limit\n- 5xx Internal\n\nThe API may also explicitly instruct the SDK to retry or not retry a request.\n\nTo set a custom number of retries, configure the client using the `maxRetries` method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    .fromEnv()\n    .maxRetries(4)\n    .build()\n```\n\n### Timeouts\n\nRequests time out after 1 minute by default.\n\nTo set a custom timeout, configure the method call using the `timeout` method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\n\nval pet: Pet = client.pet().update(\n  params, RequestOptions.builder().timeout(Duration.ofSeconds(30)).build()\n)\n```\n\nOr configure the default for all method calls at the client level:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport java.time.Duration\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    .fromEnv()\n    .timeout(Duration.ofSeconds(30))\n    .build()\n```\n\n### Proxies\n\nTo route requests through a proxy, configure the client using the `proxy` method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport java.net.InetSocketAddress\nimport java.net.Proxy\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    .fromEnv()\n    .proxy(Proxy(\n      Proxy.Type.HTTP, InetSocketAddress(\n        "https://example.com", 8080\n      )\n    ))\n    .build()\n```\n\n### Connection pooling\n\nTo customize the underlying OkHttp connection pool, configure the client using the   `maxIdleConnections` and `keepAliveDuration` methods:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\nimport java.time.Duration\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    .fromEnv()\n    // If `maxIdleConnections` is set, then `keepAliveDuration` must be set, and vice versa.\n    .maxIdleConnections(10)\n    .keepAliveDuration(Duration.ofMinutes(2))\n    .build()\n```\n\nIf both options are unset, OkHttp\'s default connection pool settings are used.\n\n### HTTPS\n\n> [!NOTE]\n> Most applications should not call these methods, and instead use the system defaults. The defaults include\n> special optimizations that can be lost if the implementations are modified.\n\nTo configure how HTTPS connections are secured, configure the client using the `sslSocketFactory`,   `trustManager`, and `hostnameVerifier` methods:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    .fromEnv()\n    // If `sslSocketFactory` is set, then `trustManager` must be set, and vice versa.\n    .sslSocketFactory(yourSSLSocketFactory)\n    .trustManager(yourTrustManager)\n    .hostnameVerifier(yourHostnameVerifier)\n    .build()\n```\n\n\n\n### Custom HTTP client\n\nThe SDK consists of three artifacts:\n- `strezless-musick-nexus-metadata-kotlin-core`\n  - Contains core SDK logic\n  - Does not depend on [OkHttp](https://square.github.io/okhttp)\n  - Exposes [`StrezlessMusickNexusMetadataClient`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClient.kt), [`StrezlessMusickNexusMetadataClientAsync`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientAsync.kt),             [`StrezlessMusickNexusMetadataClientImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientImpl.kt), and [`StrezlessMusickNexusMetadataClientAsyncImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientAsyncImpl.kt), all of which can             work with any HTTP client\n- `strezless-musick-nexus-metadata-kotlin-client-okhttp`\n  - Depends on [OkHttp](https://square.github.io/okhttp)\n  - Exposes [`StrezlessMusickNexusMetadataOkHttpClient`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClient.kt) and [`StrezlessMusickNexusMetadataOkHttpClientAsync`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClientAsync.kt), which             provide a way to construct [`StrezlessMusickNexusMetadataClientImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientImpl.kt) and             [`StrezlessMusickNexusMetadataClientAsyncImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientAsyncImpl.kt), respectively, using OkHttp\n- `strezless-musick-nexus-metadata-kotlin`\n  - Depends on and exposes the APIs of both `strezless-musick-nexus-metadata-kotlin-core` and `strezless-musick-nexus-metadata-kotlin-client-okhttp`\n  - Does not have its own logic\n\nThis structure allows replacing the SDK\'s default HTTP client without pulling in unnecessary dependencies.\n\n#### Customized [`OkHttpClient`](https://square.github.io/okhttp/3.x/okhttp/okhttp3/OkHttpClient.html)\n\n> [!TIP]\n> Try the available [network options](#network-options) before replacing the default client.\n\nTo use a customized `OkHttpClient`:\n\n1. Replace your [`strezless-musick-nexus-metadata-kotlin` dependency](#installation) with `strezless-musick-nexus-metadata-kotlin-core`\n2. Copy `strezless-musick-nexus-metadata-kotlin-client-okhttp`\'s [`OkHttpClient`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/OkHttpClient.kt) class into your code and        customize it\n3. Construct [`StrezlessMusickNexusMetadataClientImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientImpl.kt) or [`StrezlessMusickNexusMetadataClientAsyncImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientAsyncImpl.kt), similarly to        [`StrezlessMusickNexusMetadataOkHttpClient`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClient.kt) or [`StrezlessMusickNexusMetadataOkHttpClientAsync`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClientAsync.kt), using your        customized client\n\n### Completely custom HTTP client\n\nTo use a completely custom HTTP client:\n\n1. Replace your [`strezless-musick-nexus-metadata-kotlin` dependency](#installation) with `strezless-musick-nexus-metadata-kotlin-core`\n2. Write a class that implements the [`HttpClient`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/core/http/HttpClient.kt) interface\n3. Construct [`StrezlessMusickNexusMetadataClientImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientImpl.kt) or [`StrezlessMusickNexusMetadataClientAsyncImpl`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/StrezlessMusickNexusMetadataClientAsyncImpl.kt), similarly to        [`StrezlessMusickNexusMetadataOkHttpClient`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClient.kt) or [`StrezlessMusickNexusMetadataOkHttpClientAsync`](strezless-musick-nexus-metadata-kotlin-client-okhttp/src/main/kotlin/com/strezless_musick_nexus_metadata/api/client/okhttp/StrezlessMusickNexusMetadataOkHttpClientAsync.kt), using your new        client class\n\n## Undocumented API functionality\n\nThe SDK is typed for convenient usage of the documented API. However, it also supports working with undocumented or not yet supported parts of the API.\n\n### Parameters\n\nTo set undocumented parameters, call the `putAdditionalHeader`, `putAdditionalQueryParam`, or       `putAdditionalBodyProperty` methods on any `Params` class:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.core.JsonValue\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\nval params: PetUpdateParams = PetUpdateParams.builder()\n    .putAdditionalHeader("Secret-Header", "42")\n    .putAdditionalQueryParam("secret_query_param", "42")\n    .putAdditionalBodyProperty("secretProperty", JsonValue.from("42"))\n    .build()\n```\n\nThese can be accessed on the built object later using the `_additionalHeaders()`,       `_additionalQueryParams()`, and `_additionalBodyProperties()` methods.\n\nTo set a documented parameter or property to an undocumented or not yet supported _value_, pass a       [`JsonValue`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/core/Values.kt) object to its setter:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\nval params: PetUpdateParams = PetUpdateParams.builder()\n    .pet(Pet.builder()\n        .name("doggie")\n        .addPhotoUrl("string")\n        .build())\n    .build()\n```\n\nThe most straightforward way to create a [`JsonValue`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/core/Values.kt) is using its       `from(...)` method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.core.JsonValue\n\n// Create primitive JSON values\nval nullValue: JsonValue = JsonValue.from(null)\nval booleanValue: JsonValue = JsonValue.from(true)\nval numberValue: JsonValue = JsonValue.from(42)\nval stringValue: JsonValue = JsonValue.from("Hello World!")\n\n// Create a JSON array value equivalent to `["Hello", "World"]`\nval arrayValue: JsonValue = JsonValue.from(listOf(\n  "Hello", "World"\n))\n\n// Create a JSON object value equivalent to `{ "a": 1, "b": 2 }`\nval objectValue: JsonValue = JsonValue.from(mapOf(\n  "a" to 1, "b" to 2\n))\n\n// Create an arbitrarily nested JSON equivalent to:\n// {\n//   "a": [1, 2],\n//   "b": [3, 4]\n// }\nval complexValue: JsonValue = JsonValue.from(mapOf(\n  "a" to listOf(\n    1, 2\n  ), "b" to listOf(\n    3, 4\n  )\n))\n```\n\nNormally a `Builder` class\'s `build` method will throw         [`IllegalStateException`](https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html)         if any required parameter or property is unset.\n\nTo forcibly omit a required parameter or property, pass [`JsonMissing`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/core/Values.kt):\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.core.JsonMissing\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\nimport com.strezless_musick_nexus_metadata.api.models.pet.PetUpdateParams\n\nval params: PetUpdateParams = PetUpdateParams.builder()\n    .pet(Pet.builder()\n        .name("doggie")\n        .addPhotoUrl("string")\n        .build())\n    .name(JsonMissing.of())\n    .build()\n```\n\n### Response properties\n\nTo access undocumented response properties, call the `_additionalProperties()` method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.core.JsonBoolean\nimport com.strezless_musick_nexus_metadata.api.core.JsonNull\nimport com.strezless_musick_nexus_metadata.api.core.JsonNumber\nimport com.strezless_musick_nexus_metadata.api.core.JsonValue\n\nval additionalProperties: Map<String, JsonValue> = client.pet().update(params)._additionalProperties()\nval secretPropertyValue: JsonValue = additionalProperties.get("secretProperty")\n\nval result = when (secretPropertyValue) {\n    is JsonNull -> "It\'s null!"\n    is JsonBoolean -> "It\'s a boolean!"\n    is JsonNumber -> "It\'s a number!"\n    // Other types include `JsonMissing`, `JsonString`, `JsonArray`, and `JsonObject`\n    else -> "It\'s something else!"\n}\n```\n\nTo access a property\'s raw JSON value, which may be undocumented, call its `_` prefixed method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.core.JsonField\n\nval field: JsonField<Any> = client.pet().update(params)._field()\n\nif (field.isMissing()) {\n  // The property is absent from the JSON response\n} else if (field.isNull()) {\n  // The property was set to literal null\n} else {\n  // Check if value was provided as a string\n  // Other methods include `asNumber()`, `asBoolean()`, etc.\n  val jsonString: String? = field.asString();\n\n  // Try to deserialize into a custom type\n  val myObject: MyClass = field.asUnknown()!!.convert(MyClass::class.java)\n}\n```\n\n### Response validation\n\nIn rare cases, the API may return a response that doesn\'t match the expected type. For example, the SDK     may expect a property to contain a `String`, but the API could return something else.\n\nBy default, the SDK will not throw an exception in this case. It will throw     [`StrezlessMusickNexusMetadataInvalidDataException`](strezless-musick-nexus-metadata-kotlin-core/src/main/kotlin/com/strezless_musick_nexus_metadata/api/errors/StrezlessMusickNexusMetadataInvalidDataException.kt) only if you directly access the property.\n\nIf you would prefer to check that the response is completely well-typed upfront, then either call     `validate()`:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\n\nval pet: Pet = client.pet().update(params).validate()\n```\n\nOr configure the method call to validate the response using the `responseValidation` method:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.models.pet.Pet\n\nval pet: Pet = client.pet().update(\n  params, RequestOptions.builder().responseValidation(true).build()\n)\n```\n\nOr configure the default for all method calls at the client level:\n\n```kotlin\nimport com.strezless_musick_nexus_metadata.api.client.StrezlessMusickNexusMetadataClient\nimport com.strezless_musick_nexus_metadata.api.client.okhttp.StrezlessMusickNexusMetadataOkHttpClient\n\nval client: StrezlessMusickNexusMetadataClient = StrezlessMusickNexusMetadataOkHttpClient.builder()\n    .fromEnv()\n    .responseValidation(true)\n    .build()\n```\n\n## FAQ\n\n### Why don\'t you use plain `enum` classes?\n\nKotlin `enum` classes are not trivially   [forwards compatible](https://www.stainless.com/blog/making-java-enums-forwards-compatible). Using them in   the SDK could cause runtime exceptions if the API is updated to respond with a new enum value.\n\n### Why do you represent fields using `JsonField<T>` instead of just plain `T`?\n\nUsing `JsonField<T>` enables a few features:\n\n- Allowing usage of [undocumented API functionality](#undocumented-api-functionality)\n- Lazily [validating the API response against the expected shape](#response-validation)\n- Representing absent vs explicitly null values\n\n### Why don\'t you use [`data` classes](https://kotlinlang.org/docs/data-classes.html)?\n\nIt is not [backwards compatible to add new fields to a data class](https://kotlinlang.org/docs/api-guidelines-backward-compatibility.html#avoid-using-data-classes-in-your-api)   and we don\'t want to introduce a breaking change every time we add a field to a class.\n\n### Why don\'t you use checked exceptions?\n\nChecked exceptions are widely considered a mistake in the Java programming language. In fact, they were   omitted from Kotlin for this reason.\n\nChecked exceptions:\n\n- Are verbose to handle\n- Encourage error handling at the wrong level of abstraction, where nothing can be done about the error\n- Are tedious to propagate due to the [function coloring problem](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function)\n- Don\'t play well with lambdas (also due to the function coloring problem)\n\n## Semantic versioning\n\nThis package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) conventions, though certain backwards-incompatible changes may be released as minor versions:\n\n1. Changes to library internals which are technically public but not intended or documented for external use. _(Please open a GitHub issue to let us know if you are relying on such internals.)_\n2. Changes that we do not expect to impact the vast majority of users in practice.\n\nWe take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.\n\nWe are keen for your feedback; please open an [issue](https://www.github.com/omar-orrantia/Strezless/issues) with questions, bugs, or suggestions.\n',
   },
   {
+    language: 'csharp',
+    content:
+      '# Strezless Musick Nexus Metadata C# API Library\n\nThe Strezless Musick Nexus Metadata C# SDK provides convenient access to the Strezless Musick Nexus Metadata REST API from applications written in   C#.\n\n## Installation\n\n```bash\ngit clone git@github.com:stainless-sdks/strezless-musick-nexus-metadata-csharp.git\ndotnet add reference strezless-musick-nexus-metadata-csharp/src/StrezlessMusickNexusMetadata\n```\n\n## Requirements\n\nThis library requires .NET Standard 2.0 or later.\n\n## Usage\n\nSee the [`examples`](examples) directory for complete and runnable examples.\n\n```csharp\nStrezlessMusickNexusMetadataClient client = new();\n\nPetUpdateParams parameters = new()\n{\n    Name = "doggie",\n    PhotoUrls =\n    [\n        "string"\n    ],\n};\n\nvar pet = await client.Pet.Update(parameters);\n\nConsole.WriteLine(pet);\n```',
+  },
+  {
     language: 'cli',
     content:
       "# Strezless Musick Nexus Metadata CLI\n\nThe official CLI for the Strezless Musick Nexus Metadata REST API.\n\nIt is generated with [Stainless](https://www.stainless.com/).\n\n<!-- x-release-please-start-version -->\n\n## Installation\n\n### Installing with Go\n\nTo test or install the CLI locally, you need [Go](https://go.dev/doc/install) version 1.22 or later installed.\n\n~~~sh\ngo install 'github.com/omar-orrantia/Strezless-Musick-Productionz-Founder/cmd/strezless-musick-nexus-metadata@latest'\n~~~\n\nOnce you have run `go install`, the binary is placed in your Go bin directory:\n\n- **Default location**: `$HOME/go/bin` (or `$GOPATH/bin` if GOPATH is set)\n- **Check your path**: Run `go env GOPATH` to see the base directory\n\nIf commands aren't found after installation, add the Go bin directory to your PATH:\n\n~~~sh\n# Add to your shell profile (.zshrc, .bashrc, etc.)\nexport PATH=\"$PATH:$(go env GOPATH)/bin\"\n~~~\n\n<!-- x-release-please-end -->\n\n### Running Locally\n\nAfter cloning the git repository for this project, you can use the\n`scripts/run` script to run the tool locally:\n\n~~~sh\n./scripts/run args...\n~~~\n\n## Usage\n\nThe CLI follows a resource-based command structure:\n\n~~~sh\nstrezless-musick-nexus-metadata [resource] <command> [flags...]\n~~~\n\n~~~sh\nstrezless-musick-nexus-metadata pet update \\\n  --api-key 'My API Key' \\\n  --name doggie \\\n  --photo-url string\n~~~\n\nFor details about specific commands, use the `--help` flag.\n\n### Environment variables\n\n| Environment variable                      | Required |\n| ----------------------------------------- | -------- |\n| `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY` | yes      |\n\n### Global flags\n\n- `--api-key` (can also be set with `STREZLESS_MUSICK_NEXUS_METADATA_API_KEY` env var)\n- `--help` - Show command line usage\n- `--debug` - Enable debug logging (includes HTTP request/response details)\n- `--version`, `-v` - Show the CLI version\n- `--base-url` - Use a custom API backend URL\n- `--format` - Change the output format (`auto`, `explore`, `json`, `jsonl`, `pretty`, `raw`, `yaml`)\n- `--format-error` - Change the output format for errors (`auto`, `explore`, `json`, `jsonl`, `pretty`, `raw`, `yaml`)\n- `--transform` - Transform the data output using [GJSON syntax](https://github.com/tidwall/gjson/blob/master/SYNTAX.md)\n- `--transform-error` - Transform the error output using [GJSON syntax](https://github.com/tidwall/gjson/blob/master/SYNTAX.md)\n\n### Passing files as arguments\n\nTo pass files to your API, you can use the `@myfile.ext` syntax:\n\n~~~bash\nstrezless-musick-nexus-metadata <command> --arg @abe.jpg\n~~~\n\nFiles can also be passed inside JSON or YAML blobs:\n\n~~~bash\nstrezless-musick-nexus-metadata <command> --arg '{image: \"@abe.jpg\"}'\n# Equivalent:\nstrezless-musick-nexus-metadata <command> <<YAML\narg:\n  image: \"@abe.jpg\"\nYAML\n~~~\n\nIf you need to pass a string literal that begins with an `@` sign, you can\nescape the `@` sign to avoid accidentally passing a file.\n\n~~~bash\nstrezless-musick-nexus-metadata <command> --username '\\@abe'\n~~~\n\n#### Explicit encoding\n\nFor JSON endpoints, the CLI tool does filetype sniffing to determine whether the\nfile contents should be sent as a string literal (for plain text files) or as a\nbase64-encoded string literal (for binary files). If you need to explicitly send\nthe file as either plain text or base64-encoded data, you can use\n`@file://myfile.txt` (for string encoding) or `@data://myfile.dat` (for\nbase64-encoding). Note that absolute paths will begin with `@file://` or\n`@data://`, followed by a third `/` (for example, `@file:///tmp/file.txt`).\n\n~~~bash\nstrezless-musick-nexus-metadata <command> --arg @data://file.txt\n~~~\n",
+  },
+  {
+    language: 'php',
+    content:
+      '# Strezless Musick Nexus Metadata PHP API Library\n\nThe Strezless Musick Nexus Metadata PHP library provides convenient access to the Strezless Musick Nexus Metadata REST API from any PHP 8.1.0+ application.\n\n## Installation\n\nTo use this package, install via Composer by adding the following to your application\'s `composer.json`:\n\n```json\n{\n  "repositories": [\n    {\n      "type": "vcs",\n      "url": "git@github.com:stainless-sdks/strezless-musick-nexus-metadata-php.git"\n    }\n  ],\n  "require": {\n    "org-placeholder/strezless-musick-nexus-metadata": "dev-main"\n  }\n}\n```\n\n## Usage\n\n```php\n<?php\n\n$client = new Client(\n  apiKey: getenv(\'STREZLESS_MUSICK_NEXUS_METADATA_API_KEY\') ?: \'My API Key\'\n);\n\n$pet = $client->pet->update(name: \'doggie\', photoURLs: [\'string\']);\n\nvar_dump($pet->id);\n```',
   },
 ];
 
