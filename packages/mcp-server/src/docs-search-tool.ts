@@ -64,7 +64,7 @@ async function searchLocal(args: Record<string, unknown>): Promise<unknown> {
     query,
     language,
     detail,
-    maxResults: 5,
+    maxResults: 10,
   }).results;
 }
 
