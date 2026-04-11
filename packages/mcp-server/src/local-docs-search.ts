@@ -556,7 +556,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       php: {
         method: 'pet->uploadImage',
         example:
-          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$response = $client->pet->uploadImage(0, 'file');\n\nvar_dump($response);",
+          "<?php\n\nrequire_once dirname(__DIR__) . '/vendor/autoload.php';\n\n$client = new Client(apiKey: 'My API Key');\n\n$response = $client->pet->uploadImage(\n  0,\n  FileParam::fromString('Example data', filename: uniqid('file-upload-', true)),\n);\n\nvar_dump($response);",
       },
       python: {
         method: 'pet.upload_image',
