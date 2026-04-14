@@ -1,6 +1,6 @@
 {
   "name": "strezless-musick-nexus-metadata",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The official TypeScript library for the Strezless Musick Nexus Metadata API",
   "author": "Strezless Musick Nexus Metadata <>",
   "types": "dist/index.d.ts",
